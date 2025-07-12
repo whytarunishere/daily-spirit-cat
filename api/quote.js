@@ -1,20 +1,26 @@
+const express = require('express');
+const path = require('path');
 const request = require('request');
 require('dotenv').config();
+const app = express();
+const PORT = 3000;
 
-module.exports = (req, res) => {
-    if (req.method !== 'GET') {
-        return res.status(405).json({ error: 'Method not allowed' });
-    }
+const apikey = process.env.API_KEY;
+console.log('API Key:', process.env.API_KEY ? 'Exists' : 'Missing');
+// Serve static files from 'public' folder
+app.use(express.static(path.join(__dirname, 'public')));
 
-    const apikey = process.env.API_KEY;
 
+app.get('/quote', (req, res) => {
+    res.status(200).json({ message: "This works!" });
+    console.log("Received /quote request"); 
     request.get({
         url: 'https://api.api-ninjas.com/v1/quotes',
         headers: {
             'X-Api-Key': apikey
         },
     }, function (error, response, body) {
-        if (error) {
+         if (error) {
             console.error('Request failed:', error);
             return res.status(500).json({ error: 'Request failed' });
         }
@@ -26,10 +32,16 @@ module.exports = (req, res) => {
 
         try {
             const data = JSON.parse(body);
-            return res.status(200).json({ quote: data[0].quote });
+            return res.json({ quote : data[0].quote});
         } catch (err) {
             console.error('JSON parse error:', err);
             return res.status(500).json({ error: 'Invalid JSON from API' });
         }
-    });
-};
+    })
+})
+
+// Start server
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+});
+

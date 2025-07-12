@@ -11,7 +11,7 @@ const apikey = process.env.API_KEY;
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.get('/', (req, res) => {
+app.get('/quote', (req, res) => {
     res.status(200).json({ message: "This works!" });
     console.log("Received /quote request"); 
     request.get({

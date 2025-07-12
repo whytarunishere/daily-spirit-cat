@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
     console.log("Fetching quote...");
-    fetch('/')
+    fetch('/quote')
         .then(res => {
             console.log("Got response:", res);
             return res.json();
@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadCat() {
-
+    
     var url = "https://cataas.com/cat";
 
     var catImg = document.getElementById("catImage")

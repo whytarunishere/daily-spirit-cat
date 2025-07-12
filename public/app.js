@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
     console.log("Fetching quote...");
-    fetch('/quote')
+    fetch('/')
         .then(res => {
             console.log("Got response:", res);
             return res.json();

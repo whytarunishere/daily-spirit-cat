@@ -12,6 +12,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/quote', (req, res) => {
+    res.status(200).json({ message: "This works!" });
     console.log("Received /quote request"); 
     request.get({
         url: 'https://api.api-ninjas.com/v1/quotes',

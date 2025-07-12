@@ -66,29 +66,4 @@ function changeColor() {
 
 }
 setInterval(changeColor, 250);
-/*
-function changeBg() {
-    var bgcolor = document.querySelector("body");
-    if (bgcolor.style.backgroundColor == "blue") {
-        bgcolor.style.backgroundColor = "red";
-    } else {
-        bgcolor.style.backgroundColor = "blue";
-    }
 
-
-}
-    setInterval(changeBg, 100);*/
-
-
-/*
-var xhr = new XMLHttpRequest();
-var url = "https://cataas.com/cat";
-xhr.open("GET", url);
-xhr.send();
-
-xhr.onreadystatechange = () => {
-    var state = xhr.readyState;
-    if(state == 4){
-        console.log(this.responseText);
-    }
-}*/

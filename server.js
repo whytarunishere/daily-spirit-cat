@@ -6,10 +6,10 @@ const app = express();
 const PORT = 3000;
 
 const apikey = process.env.API_KEY;
-
+console.log('API Key:', process.env.API_KEY ? 'Exists' : 'Missing');
 // Serve static files from 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
-console.log('API Key:', process.env.API_KEY ? 'Exists' : 'Missing');
+
 
 app.get('/quote', (req, res) => {
     res.status(200).json({ message: "This works!" });

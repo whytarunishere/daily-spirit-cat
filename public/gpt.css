@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #273F4F;
+  color: #D7D7D7;
+  font-family: 'Bebas Neue', sans-serif;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+/* === Header Strip with Logos === */
+.heading-strip {
+  background-color: #447D9B;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#h1 {
+  color: #FE7743;
+  font-size: 48px;
+  text-shadow: 2px 2px 0 #000;
+  z-index: 1;
+  padding: 0 20px;
+}
+
+/* Logo cats flanking the heading */
+#headcatL, #headcatR {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(2px 2px 2px #000);
+}
+
+#headcatL {
+  left: 20px;
+}
+
+#headcatR {
+  right: 20px;
+}
+
+/* === Hero and Loading Images === */
+#heroImage,
+#loadingImage {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin: 30px auto;
+  display: none;
+}
+
+/* === Cat Image Card === */
+#result {
+  margin: 20px auto;
+  background-color: #D7D7D7;
+  color: #273F4F;
+  border-radius: 16px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  display: none;
+}
+
+#catImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 4px solid #FE7743;
+  image-rendering: pixelated;
+  margin-bottom: 15px;
+}
+
+#quoteText {
+  font-size: 16px;
+  font-style: italic;
+  color: #273F4F;
+}
+
+/* === Button === */
+button {
+  background-color: #FE7743;
+  color: #273F4F;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: 2px solid #D7D7D7;
+  border-radius: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 3px 3px 0 #447D9B;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #ff9961;
+  transform: translateY(2px);
+}

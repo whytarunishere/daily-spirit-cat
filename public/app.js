@@ -2,7 +2,7 @@
 
 window.addEventListener("DOMContentLoaded", () => {
     console.log("Fetching quote...");
-    fetch('/api/quote')
+    fetch('/api/index')
         .then(res => {
             console.log("Got response:", res);
             return res.json();
